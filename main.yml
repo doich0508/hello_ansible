@@ -1,0 +1,8 @@
+- name: TestPlayBook
+  hosts: test_servers
+  roles:
+    - commonset
+    # - httpd
+    # - php
+    # - mysql
+    # - wordpress

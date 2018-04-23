@@ -1,0 +1,28 @@
+---
+- hosts: test_servers
+  become: yes
+  tasks:
+    - name: set timezone to Asia/Tokyo
+      timezone: 
+        name: Asia/Tokyo
+    - name: set selinux:permissive
+      selinux:
+        policy: targeted
+        state: permissive
+    # - name: yum update
+    #   yum:
+    #     name:'*'
+    #     state:latest
+    - name: firewalld settings
+      firewalld:
+        # service: https
+        # permanent: true
+        # state: enabled
+
+        port: 80/tcp
+        permanent: true
+        state: disabled
+
+        port: 443/tcp
+        permanent: true
+        state: enabled
