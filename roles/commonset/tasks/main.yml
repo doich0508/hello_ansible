@@ -9,16 +9,8 @@
       selinux:
         policy: targeted
         state: permissive
-    # - name: yum update
-    #   yum:
-    #     name:'*'
-    #     state:latest
     - name: firewalld settings
       firewalld:
-        # service: https
-        # permanent: true
-        # state: enabled
-
         port: 80/tcp
         permanent: true
         state: disabled
